@@ -1,25 +1,25 @@
 public class Piece
-{ // start class Piece
-    private static final int REMOVED = -1; // final so that it the REMOVED value is always the same
-    private int place; // determines whether or not it is in use (could be a boolean, but i'm lazy)
+{
+    private static final int REMOVED = -1; // when piece is off the board, set to -1
+    private int place; 
 
     private int moves[]; // all the pieces moves
     private int middle[]; // all middle pieces for each move
     private int total;   // number of moves and middle pieces
     
     public Piece() // no args constructer
-    { // start constructor
+    {
         place = 1; 
         moves = new int[4]; 
         middle = new int[4]; 
         total = 0; 
-    } // end constructor
+    }
     
     public Piece(int x) // int arg constructor
     { 
         place = x; // set the place equal to the param
         SetMoves(); // set up the piece's moves
-    } // end constructor
+    }
     
     // this function returns the piece that is the middle of a jump
     public int Middle(int m)
@@ -77,7 +77,7 @@ public class Piece
 		int total = 0; // will hold total number of moves for this piece
 		int x = place; 
 
-		// switch statement for each piece
+		// switch statement for all pieces
 		switch (x)
 		{ 
 			case 0: // first piece
@@ -229,10 +229,10 @@ public class Piece
 				middle[0] = 13; middle[1] = 9; 
 				total = 2; 
 			break;
-		} // end switch
+		}
 
 		this.moves = moves; // set this piece's moves equal to the possible moves
 		this.middle = middle; // set this piece's middle equal to the possible middle
 		this.total = total; // set this piece's total equal to the total moves
-	} // end SetMoves function
+	}
 } // end Piece class 
